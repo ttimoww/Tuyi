@@ -1,0 +1,25 @@
+{
+  "name": "tuyi",
+  "version": "1.0.0",
+  "description": "Social Media Platform",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "server-client": "concurrently \"npm run server\" \"npm run client\"",
+    "sass": "client && npm run sass",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"cd client && npm run sass\""
+  },
+  "author": "Timo Wernars",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "concurrently": "^4.1.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "mongoose": "^5.6.0",
+    "mongoose-type-email": "^1.0.11"
+  }
+}

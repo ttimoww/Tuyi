@@ -1,0 +1,113 @@
+div.homepage{
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+    section.login{
+        position: relative;
+        width: 100%;
+        max-width: 340px;
+        background-color: #EDEEF0;
+        border-radius: 6px;
+
+        div.login-error-message{
+            position: absolute;
+            top: -45px;
+            left: 0;
+            width: 100%;
+            background-color: #e74c3c;
+            border-radius: 4px;
+            animation: .3s fadeIn;
+
+
+            p{
+                color: #Fff;
+                margin: 0;
+                font-size: 12px;
+                padding: 10px 10px;
+            }
+
+            i{
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #FFF;
+            }
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            height: 30px;
+            width: 30px;
+            transform: translateY(-50%) rotate(45deg);
+            background-color: #EDEEF0; 
+        }
+
+        div.login__container{
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+
+            form{
+                input, button{
+                    display: block;
+                    border: none;
+                    width: 100%;
+                    margin: 15px 0px;
+                    padding: 8px 5px;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    border: 2px solid transparent;
+                    transition: border .3s;
+                    &:focus{
+                        border: 2px solid #1dd1a1;
+                        outline: 0;
+                    }
+                }
+
+                input{
+                    &::placeholder{
+                        opacity: .6;
+                    }
+                    &:-webkit-autofill{
+                        -webkit-box-shadow: 0 0 0 30px white inset !important;
+                    }
+                }
+
+                button[type=submit]{
+                    background-color: #1dd1a1;
+                    color: #FFF;
+                    cursor: pointer;
+                }
+            }
+
+            p.login__newacc{
+                font-size: 11px;
+                color: #808080;
+                text-align: center;
+                margin: 10px 0px;
+
+                a{
+                    color: #1dd1a1;
+                    text-decoration: none;
+
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

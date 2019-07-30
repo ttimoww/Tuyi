@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+  background-color: #1dd1a1;
+}
+
+div.pageloader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.pageloader div.pageloader__icon {
+  height: 30px;
+  width: 30px;
+  animation: rotate 1.2s infinite;
+  background-image: url("../../images/icons/loading.svg");
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+div.homepage {
+  height: 100%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+div.homepage section.login {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  background-color: #EDEEF0;
+  border-radius: 6px;
+}
+div.homepage section.login div.login-error-message {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  width: 100%;
+  background-color: #e74c3c;
+  border-radius: 4px;
+  animation: 0.3s fadeIn;
+}
+div.homepage section.login div.login-error-message p {
+  color: #Fff;
+  margin: 0;
+  font-size: 12px;
+  padding: 10px 10px;
+}
+div.homepage section.login div.login-error-message i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FFF;
+}
+div.homepage section.login::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  height: 30px;
+  width: 30px;
+  transform: translateY(-50%) rotate(45deg);
+  background-color: #EDEEF0;
+}
+div.homepage section.login div.login__container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+div.homepage section.login div.login__container form input, div.homepage section.login div.login__container form button {
+  display: block;
+  border: none;
+  width: 100%;
+  margin: 15px 0px;
+  padding: 8px 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+div.homepage section.login div.login__container form input:focus, div.homepage section.login div.login__container form button:focus {
+  border: 2px solid #1dd1a1;
+  outline: 0;
+}
+div.homepage section.login div.login__container form input::placeholder {
+  opacity: 0.6;
+}
+div.homepage section.login div.login__container form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+div.homepage section.login div.login__container form button[type=submit] {
+  background-color: #1dd1a1;
+  color: #FFF;
+  cursor: pointer;
+}
+div.homepage section.login div.login__container p.login__newacc {
+  font-size: 11px;
+  color: #808080;
+  text-align: center;
+  margin: 10px 0px;
+}
+div.homepage section.login div.login__container p.login__newacc a {
+  color: #1dd1a1;
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+div.registerpage {
+  width: 100%;
+  height: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+div.registerpage section.register {
+  width: 100%;
+  max-width: 340px;
+  background-color: #EDEEF0;
+  border-radius: 6px;
+}
+div.registerpage section.register div.register__container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=index.css.map */

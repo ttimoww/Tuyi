@@ -1,0 +1,22 @@
+div.pageloader{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div.pageloader__icon{
+        height: 30px;
+        width: 30px;
+        animation: rotate 1.2s infinite;
+        background-image: url('../../images/icons/loading.svg');
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+@keyframes rotate{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg)};
+}

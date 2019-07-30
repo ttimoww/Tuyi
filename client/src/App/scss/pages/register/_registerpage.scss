@@ -1,0 +1,22 @@
+div.registerpage{
+    width: 100%;
+    height: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    section.register{
+        width: 100%;
+        max-width: 340px;
+        background-color: #EDEEF0;
+        border-radius: 6px;
+
+        div.register__container{
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    }
+}
