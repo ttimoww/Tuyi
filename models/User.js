@@ -16,5 +16,5 @@ let userSchema = new mongoose.Schema({
     availability: []
 })
 
-let User = mongoose.model('User', userSchema)
+let User = mongoose.model('User', userSchema, 'users')
 module.exports = User;
