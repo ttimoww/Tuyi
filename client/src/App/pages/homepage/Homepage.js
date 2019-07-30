@@ -61,17 +61,24 @@ class Homepage extends Component {
     render() { 
         return ( 
             <div className="homepage">
-                <section className="login">
-                {this.state.loginErrorMessage ? <div className="login-error-message"><p>{this.state.loginErrorMessage}</p><i className="fas fa-exclamation-triangle"></i></div> : null}
-                    <div className="login__container">
-                        <form onSubmit={this.handleLoginSubmit}>
-                            <input type="email" placeholder="Enter your email" id="login-user" onChange={this.handleLoginEmail}/>
-                            <input type="password" placeholder="Password" id="login-pass" onChange={this.handleLoginPassword} />
-                            <button type="submit">Login</button>
-                        </form>
-                        <p className="login__newacc" ><Link to="/register">Click here</Link> to sign up!</p>
-                    </div>
-                </section>
+                <div className="homepage__content">
+                    <section className="homepage__logo">
+                        <div className="homepage__logo__content">
+                            
+                        </div>
+                    </section>
+                    <section className="login">
+                    {this.state.loginErrorMessage ? <div className="login-error-message"><p>{this.state.loginErrorMessage}</p><i className="fas fa-exclamation-triangle"></i></div> : null}
+                        <div className="login__container">
+                            <form onSubmit={this.handleLoginSubmit}>
+                                <input type="email" placeholder="Enter your email" id="login-user" onChange={this.handleLoginEmail}/>
+                                <input type="password" placeholder="Password" id="login-pass" onChange={this.handleLoginPassword} />
+                                <button type="submit">Login</button>
+                            </form>
+                            <p className="login__newacc" ><Link to="/register">Click here</Link> to sign up!</p>
+                        </div>
+                    </section>
+                </div>
             </div>
          );
     }

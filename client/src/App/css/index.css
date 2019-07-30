@@ -47,14 +47,31 @@ div.homepage {
   align-items: center;
   justify-content: center;
 }
-div.homepage section.login {
-  position: relative;
+div.homepage div.homepage__content {
   width: 100%;
   max-width: 340px;
+  position: relative;
+}
+div.homepage div.homepage__content section.homepage__logo {
+  width: 100%;
+  position: absolute;
+  top: -120px;
+}
+div.homepage div.homepage__content section.homepage__logo div.homepage__logo__content {
+  width: 100%;
+  height: 50px;
+  background-image: url("../../images/logos/logo-w.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: float 6s ease-in-out infinite;
+}
+div.homepage div.homepage__content section.login {
+  position: relative;
+  width: 100%;
   background-color: #EDEEF0;
   border-radius: 6px;
 }
-div.homepage section.login div.login-error-message {
+div.homepage div.homepage__content section.login div.login-error-message {
   position: absolute;
   top: -45px;
   left: 0;
@@ -63,21 +80,20 @@ div.homepage section.login div.login-error-message {
   border-radius: 4px;
   animation: 0.3s fadeIn;
 }
-div.homepage section.login div.login-error-message p {
+div.homepage div.homepage__content section.login div.login-error-message p {
   color: #Fff;
   margin: 0;
   font-size: 12px;
   padding: 10px 10px;
 }
-div.homepage section.login div.login-error-message i {
+div.homepage div.homepage__content section.login div.login-error-message i {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
   color: #FFF;
 }
-div.homepage section.login::after {
-  content: "";
+div.homepage div.homepage__content section.login::after {
   position: absolute;
   right: -15px;
   top: 50%;
@@ -86,12 +102,17 @@ div.homepage section.login::after {
   transform: translateY(-50%) rotate(45deg);
   background-color: #EDEEF0;
 }
-div.homepage section.login div.login__container {
+@media (min-width: 768px) {
+  div.homepage div.homepage__content section.login::after {
+    content: "";
+  }
+}
+div.homepage div.homepage__content section.login div.login__container {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
-div.homepage section.login div.login__container form input, div.homepage section.login div.login__container form button {
+div.homepage div.homepage__content section.login div.login__container form input, div.homepage div.homepage__content section.login div.login__container form button {
   display: block;
   border: none;
   width: 100%;
@@ -102,32 +123,43 @@ div.homepage section.login div.login__container form input, div.homepage section
   border: 2px solid transparent;
   transition: border 0.3s;
 }
-div.homepage section.login div.login__container form input:focus, div.homepage section.login div.login__container form button:focus {
+div.homepage div.homepage__content section.login div.login__container form input:focus, div.homepage div.homepage__content section.login div.login__container form button:focus {
   border: 2px solid #1dd1a1;
   outline: 0;
 }
-div.homepage section.login div.login__container form input::placeholder {
+div.homepage div.homepage__content section.login div.login__container form input::placeholder {
   opacity: 0.6;
 }
-div.homepage section.login div.login__container form input:-webkit-autofill {
+div.homepage div.homepage__content section.login div.login__container form input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
-div.homepage section.login div.login__container form button[type=submit] {
+div.homepage div.homepage__content section.login div.login__container form button[type=submit] {
   background-color: #1dd1a1;
   color: #FFF;
   cursor: pointer;
 }
-div.homepage section.login div.login__container p.login__newacc {
+div.homepage div.homepage__content section.login div.login__container p.login__newacc {
   font-size: 11px;
   color: #808080;
   text-align: center;
   margin: 10px 0px;
 }
-div.homepage section.login div.login__container p.login__newacc a {
+div.homepage div.homepage__content section.login div.login__container p.login__newacc a {
   color: #1dd1a1;
   text-decoration: none;
 }
 
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
