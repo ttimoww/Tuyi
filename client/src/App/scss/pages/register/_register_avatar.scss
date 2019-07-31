@@ -1,0 +1,75 @@
+section.registeravatar{
+    width: 100%;
+
+    h1{
+        margin: 0px 0px 20px 0px;
+        font-size: 13px;
+        text-align: center;
+        color: rgba(0, 0, 0, .5);
+        span{
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+
+    div.avatar-preview{
+        width: 120px;
+        height: 120px;
+        margin: 0px auto 10px auto;
+        border-radius: 100%;
+        background-color: #FFF;
+        background-image: url('../../images/user/avatar.svg');
+        background-size: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    div.avatar-upload{
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input[type=file]{
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+            &+label{
+                color: #1dd1a1;
+                font-size: 12px;
+                cursor: pointer;
+                letter-spacing: .3px;
+                text-align: center;
+            }
+        }
+    } // div.avatar-upload
+
+    button[type=submit]{
+        background-color: #1dd1a1;
+        color: #FFF;
+        cursor: pointer;
+        display: block;
+        border: none;
+        width: 100%;
+        margin: 10px 0px 0px 0px;
+        padding: 8px 5px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        border: 2px solid transparent;
+        transition: border .3s;
+        &:focus{
+            border: 2px solid #1dd1a1;
+            outline: 0;
+        }
+    }
+
+    p.registeravatar__skip{
+        text-align: right;
+        font-size: 10px;
+        opacity: .5;
+        letter-spacing: .4px;
+        margin: 10px 0px 0px 0px;
+        cursor: pointer;
+    }
+}

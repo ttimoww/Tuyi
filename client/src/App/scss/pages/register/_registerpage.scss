@@ -69,6 +69,7 @@ div.registerpage{
                 box-sizing: border-box;
 
                 @import './register-form';
+                @import './register_avatar';
 
                 div.register__buttons{
                     width: 75%;
