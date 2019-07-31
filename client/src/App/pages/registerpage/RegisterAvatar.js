@@ -15,6 +15,7 @@ class RegisterAvatar extends Component {
     }
 
     handlePhaseUp = () => {
+        this.props.changeErrorMessage(''); // Clears both error and succes messages
         this.props.phaseUp();
     }
 

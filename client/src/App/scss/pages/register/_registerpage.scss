@@ -63,6 +63,32 @@ div.registerpage{
                 }
             }
 
+            div.login-success-message{
+                position: absolute;
+                top: -45px;
+                left: 0;
+                width: 100%;
+                background-color: #EDEEF0;
+                border-radius: 4px;
+                animation: .3s fadeIn;
+    
+                p{
+                    color: rgba(0, 0, 0, .5);
+                    margin: 0;
+                    font-size: 12px;
+                    letter-spacing: .4px;
+                    padding: 10px 10px;
+                }
+    
+                i{
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #1DD1A1;
+                }
+            }
+
             div.register__container{
                 width: 100%;
                 padding: 20px;

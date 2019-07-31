@@ -8,6 +8,7 @@ class Registerpage extends Component {
         super(props);
         this.state = { 
             registerErrorMessage: '',
+            registerSuccessMessage: '',
             phase: 1 // There will be 3 phases: User Info -> Profile Pic -> Follow topics
          }
     }
@@ -20,13 +21,14 @@ class Registerpage extends Component {
         return { phase: prevState.phase-- };
     });
 
-    handleChangeErrorMessage = message => this.setState({ registerErrorMessage: message });
-
+    handleChangeErrorMessage = message => this.setState({ registerErrorMessage: message, registerSuccessMessage: '' });
+    handleChangeSuccessMessage = message => this.setState({ registerErrorMessage: '', registerSuccessMessage: message });
+    
     render() { 
 
         let phase = null;
-        if (this.state.phase === 1){phase = <RegisterForm changeErrorMessage={this.handleChangeErrorMessage} phaseUp={this.handlePhaseUp} />}
-        else if (this.state.phase === 2){phase = <RegisterAvatar changeErrorMessage={this.handleChangeErrorMessage} phaseUp={this.handlePhaseUp} />}
+        if (this.state.phase === 1){phase = <RegisterForm changeErrorMessage={this.handleChangeErrorMessage} changeSuccessMessage={this.handleChangeSuccessMessage} phaseUp={this.handlePhaseUp} />}
+        else if (this.state.phase === 2){phase = <RegisterAvatar changeErrorMessage={this.handleChangeErrorMessage} changeSuccessMessage={this.handleChangeSuccessMessage} phaseUp={this.handlePhaseUp} />}
         else if (this.state.phase === 3){phase = <RegisterInterests changeErrorMessage={this.handleChangeErrorMessage} />}
 
         return ( 
@@ -37,6 +39,7 @@ class Registerpage extends Component {
                 </section>
                 <div className="register">
                     {this.state.registerErrorMessage ? <div className="login-error-message"><p>{this.state.registerErrorMessage}</p><i className="fas fa-exclamation-triangle"></i></div> : null}
+                    {this.state.registerSuccessMessage ? <div className="login-success-message"><p>{this.state.registerSuccessMessage}</p><i className="fas fa-check"></i></div> : null}
                     <div className="register__container">
                         {phase}
                         {/* <div className="register__buttons">

@@ -252,6 +252,29 @@ div.registerpage div.registerpage__content div.register div.login-error-message 
   transform: translateY(-50%);
   color: #FFF;
 }
+div.registerpage div.registerpage__content div.register div.login-success-message {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  width: 100%;
+  background-color: #EDEEF0;
+  border-radius: 4px;
+  animation: 0.3s fadeIn;
+}
+div.registerpage div.registerpage__content div.register div.login-success-message p {
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  padding: 10px 10px;
+}
+div.registerpage div.registerpage__content div.register div.login-success-message i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1DD1A1;
+}
 div.registerpage div.registerpage__content div.register div.register__container {
   width: 100%;
   padding: 20px;

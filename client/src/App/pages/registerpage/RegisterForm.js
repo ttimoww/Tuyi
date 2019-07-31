@@ -41,9 +41,10 @@ class RegisterForm extends Component {
                     .then(resp => {
                         if (resp.status === 200){
                             this.props.phaseUp();
-                            this.props.changeErrorMessage('');
+                            this.props.changeSuccessMessage('You\'re Succesfully registered! Welcome to Tuyi')
                         } else if ( resp.status === 409){
                             this.props.changeErrorMessage('This e-mail address is already taken');
+
                         } else if (resp.status === 500){
                             this.props.changeErrorMessage('Oops, something went wrong');
                         }
