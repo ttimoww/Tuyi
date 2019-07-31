@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   height: 100%;
+  overflow-x: hidden;
 }
 
 #root {
@@ -13,6 +14,10 @@ html, body {
 .app {
   height: 100%;
   background-color: #1dd1a1;
+}
+
+.hidden {
+  display: none;
 }
 
 div.pageloader {
@@ -26,7 +31,7 @@ div.pageloader div.pageloader__icon {
   height: 30px;
   width: 30px;
   animation: rotate 1.2s infinite;
-  background-image: url("../../images/icons/loading.svg");
+  background-image: url("../../images/logos/logo-w.svg");
   background-size: 30px;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,7 +55,14 @@ div.homepage {
 div.homepage div.homepage__content {
   width: 100%;
   max-width: 340px;
+  padding: 0px 4px;
+  box-sizing: border-box;
   position: relative;
+}
+@media (min-width: 576px) {
+  div.homepage div.homepage__content {
+    padding: 0px;
+  }
 }
 div.homepage div.homepage__content section.homepage__logo {
   width: 100%;
@@ -60,14 +72,13 @@ div.homepage div.homepage__content section.homepage__logo {
 div.homepage div.homepage__content section.homepage__logo div.homepage__logo__content {
   width: 100%;
   height: 50px;
-  background-image: url("../../images/logos/logo-w.svg");
+  background-image: url("../../images/logos/logo-w-full.svg");
   background-repeat: no-repeat;
   background-position: center;
-  animation: float 6s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 div.homepage div.homepage__content section.login {
   position: relative;
-  width: 100%;
   background-color: #EDEEF0;
   border-radius: 6px;
 }
@@ -177,16 +188,58 @@ div.registerpage {
   align-items: center;
   justify-content: center;
 }
-div.registerpage section.register {
+div.registerpage div.registerpage__content {
   width: 100%;
   max-width: 340px;
+  padding: 0px 4px;
+  box-sizing: border-box;
+  position: relative;
+}
+@media (min-width: 576px) {
+  div.registerpage div.registerpage__content {
+    padding: 0px;
+  }
+}
+div.registerpage div.registerpage__content section.registerpage__logo {
+  width: 100%;
+  position: absolute;
+  top: -120px;
+}
+div.registerpage div.registerpage__content section.registerpage__logo div.registerpage__logo__content {
+  width: 100%;
+  height: 50px;
+  background-image: url("../../images/logos/logo-w-full.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: float 4s ease-in-out infinite;
+}
+div.registerpage div.registerpage__content div.register {
+  position: relative;
   background-color: #EDEEF0;
   border-radius: 6px;
 }
-div.registerpage section.register div.register__container {
+div.registerpage div.registerpage__content div.register div.register__container {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+}
+div.registerpage div.registerpage__content div.register div.register__container div.register__buttons {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+}
+div.registerpage div.registerpage__content div.register div.register__container div.register__buttons div.register__buttons__arrow {
+  height: 25px;
+  width: 25px;
+  background-image: url("../../images/icons/arrow-g.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+div.registerpage div.registerpage__content div.register div.register__container div.register__buttons div.register__buttons__arrow#right {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=index.css.map */

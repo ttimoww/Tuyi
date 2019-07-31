@@ -4,7 +4,7 @@ import PrivateRoute from './PrivateRoute';
 import Homepage from './pages/homepage/Homepage';
 import Dashboard from './pages/dashboard/Dashboard';
 import PageNotFound from './pages/pageNotFound/PageNotFound';
-import Register from './pages/Register/Register';
+import Registerpage from './pages/registerpage/Registerpage';
 import './css/index.css';
 
 class App extends React.Component {
@@ -19,7 +19,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Homepage} />
           <PrivateRoute path="/dashboard" component={Dashboard} authenticated={true}/>
-          <PrivateRoute path="/register" component={Register} authenticated={false} />
+          <PrivateRoute path="/register" component={Registerpage} authenticated={false} />
           <Route component={PageNotFound} />
         </Switch>
       </div>  
