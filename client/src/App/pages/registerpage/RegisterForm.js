@@ -25,7 +25,30 @@ class RegisterForm extends Component {
         if(this.state.firstname && this.state.lastname && this.state.email && this.state.password && this.state.password2){
             if (this.state.password === this.state.password2){
                 if (this.state.terms) {
-                    // SEND
+
+                    const body = {
+                        firstName: this.state.firstname,
+                        lastName: this.state.lastname,
+                        email: this.state.email,
+                        password: this.state.password
+                    }
+
+                    fetch('api/register', {
+                        method: 'POST',
+                        body: JSON.stringify(body),
+                        headers: {'Content-Type': 'application/json'}
+                    })
+                    .then(resp => {
+                        if (resp.status === 200){
+                            this.props.phaseUp();
+                            this.props.changeErrorMessage('');
+                        } else if ( resp.status === 409){
+                            this.props.changeErrorMessage('This e-mail address is already taken');
+                        } else if (resp.status === 500){
+                            this.props.changeErrorMessage('Oops, something went wrong');
+                        }
+                    })
+
                 } else{
                     this.props.changeErrorMessage('Accepting the Terms of Service is required')
                 }

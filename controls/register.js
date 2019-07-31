@@ -19,11 +19,12 @@ router.post('/register', (req, res) => {
                 email: req.body.email,
                 password: hash
             })
+
             U1.save((err, docs) => {
                 if (err) {
                     console.log(err);
-                    res.status('401');
-                    res.json({error: 'Registration failed'})
+                    res.status('500');
+                    res.json({error: 'Something went wrong'})
                 } else{
                     res.status('200');
                     res.json({'succes': 'Succesfully registerd new user'});

@@ -8,7 +8,7 @@ class Registerpage extends Component {
         super(props);
         this.state = { 
             registerErrorMessage: '',
-            phase: 2 // There will be 3 phases: User Info -> Profile Pic -> Follow topics
+            phase: 1 // There will be 3 phases: User Info -> Profile Pic -> Follow topics
          }
     }
 
@@ -25,7 +25,7 @@ class Registerpage extends Component {
     render() { 
 
         let phase = null;
-        if (this.state.phase === 1){phase = <RegisterForm changeErrorMessage={this.handleChangeErrorMessage} />}
+        if (this.state.phase === 1){phase = <RegisterForm changeErrorMessage={this.handleChangeErrorMessage} phaseUp={this.handlePhaseUp} />}
         else if (this.state.phase === 2){phase = <RegisterAvatar changeErrorMessage={this.handleChangeErrorMessage} phaseUp={this.handlePhaseUp} />}
         else if (this.state.phase === 3){phase = <RegisterInterests changeErrorMessage={this.handleChangeErrorMessage} />}
 

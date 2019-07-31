@@ -18,6 +18,14 @@ class RegisterAvatar extends Component {
         this.props.phaseUp();
     }
 
+    handleSubmit = () => {
+        if(this.state.file){
+
+        } else{
+            this.props.changeErrorMessage('Please upload an Image first');
+        }
+    }
+
     render() { 
 
         return ( 
@@ -29,7 +37,7 @@ class RegisterAvatar extends Component {
                     <input type="file" accept="image/png, image/jpeg" id="avatar-upload" onChange={this.handleChange} />
                     <label htmlFor="avatar-upload">Choose File ...</label>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" onClick={this.handleSubmit} >Submit</button>
                 <p className="registeravatar__skip" onClick={this.handlePhaseUp}><span className="txt-green">Skip</span> this step for now</p>
             </section>
          );
