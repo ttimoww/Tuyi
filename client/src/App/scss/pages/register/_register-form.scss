@@ -1,0 +1,56 @@
+section.registerform{
+    width: 100%;
+
+    form{
+        width: 100%;
+
+        input, button{
+            display: block;
+            border: none;
+            width: 100%;
+            margin: 15px 0px;
+            padding: 8px 5px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            border: 2px solid transparent;
+            transition: border .3s;
+            &:focus{
+                border: 2px solid #1dd1a1;
+                outline: 0;
+            }
+        }
+
+        input{
+            &::placeholder{
+                opacity: .6;
+            }
+            &:-webkit-autofill{
+                -webkit-box-shadow: 0 0 0 30px white inset !important;
+            }
+        }
+
+        div.register-terms{
+            display: flex;
+            justify-content: flex-start;
+
+            input{
+                width: 20px;
+                height: 15px;
+                width: 15px;
+                margin: 0px 10px 0px 0px;
+            }
+
+            p{
+                font-size: 13.33px;
+                margin: 0px;
+                color: rgba(0, 0, 0, .5);
+            }
+        }
+
+        button[type=submit]{
+            background-color: #1dd1a1;
+            color: #FFF;
+            cursor: pointer;
+        }
+    }
+}

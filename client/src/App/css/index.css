@@ -20,6 +20,29 @@ html, body {
   display: none;
 }
 
+.txt-green {
+  color: #1dd1a1;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 div.pageloader {
   width: 100%;
   height: 100%;
@@ -160,32 +183,11 @@ div.homepage div.homepage__content section.login div.login__container p.login__n
   text-decoration: none;
 }
 
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-20px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 div.registerpage {
   width: 100%;
   height: 100%;
   height: 100%;
   display: flex;
-  align-content: center;
-  align-items: center;
   justify-content: center;
 }
 div.registerpage div.registerpage__content {
@@ -194,6 +196,8 @@ div.registerpage div.registerpage__content {
   padding: 0px 4px;
   box-sizing: border-box;
   position: relative;
+  margin-top: 50vh;
+  transform: translateY(-50%);
 }
 @media (min-width: 576px) {
   div.registerpage div.registerpage__content {
@@ -218,10 +222,79 @@ div.registerpage div.registerpage__content div.register {
   background-color: #EDEEF0;
   border-radius: 6px;
 }
+div.registerpage div.registerpage__content div.register div.login-error-message {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  width: 100%;
+  background-color: #e74c3c;
+  border-radius: 4px;
+  animation: 0.3s fadeIn;
+}
+div.registerpage div.registerpage__content div.register div.login-error-message p {
+  color: #Fff;
+  margin: 0;
+  font-size: 12px;
+  padding: 10px 10px;
+}
+div.registerpage div.registerpage__content div.register div.login-error-message i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FFF;
+}
 div.registerpage div.registerpage__content div.register div.register__container {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform {
+  width: 100%;
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform form {
+  width: 100%;
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform form input, div.registerpage div.registerpage__content div.register div.register__container section.registerform form button {
+  display: block;
+  border: none;
+  width: 100%;
+  margin: 15px 0px;
+  padding: 8px 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform form input:focus, div.registerpage div.registerpage__content div.register div.register__container section.registerform form button:focus {
+  border: 2px solid #1dd1a1;
+  outline: 0;
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform form input::placeholder {
+  opacity: 0.6;
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform form div.register-terms {
+  display: flex;
+  justify-content: flex-start;
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform form div.register-terms input {
+  width: 20px;
+  height: 15px;
+  width: 15px;
+  margin: 0px 10px 0px 0px;
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform form div.register-terms p {
+  font-size: 13.33px;
+  margin: 0px;
+  color: rgba(0, 0, 0, 0.5);
+}
+div.registerpage div.registerpage__content div.register div.register__container section.registerform form button[type=submit] {
+  background-color: #1dd1a1;
+  color: #FFF;
+  cursor: pointer;
 }
 div.registerpage div.registerpage__content div.register div.register__container div.register__buttons {
   width: 75%;
