@@ -18,3 +18,12 @@
         opacity: 1;
     }
 }
+
+@keyframes bounce{
+	0% {
+		transform: translatey(0px);
+	}
+	100% {
+		transform: translatey(-10px);
+	}
+}

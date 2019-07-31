@@ -20,8 +20,21 @@ class RegisterForm extends Component {
     handlePassword2Change = e => this.setState({ password2: e.target.value });
     handleTermsChange = e => this.setState({ terms: e.target.checked });
 
-    handleSubmit = e => {
+    handleFormSubmit = e => {
         e.preventDefault();
+        if(this.state.firstname && this.state.lastname && this.state.email && this.state.password && this.state.password2){
+            if (this.state.password === this.state.password2){
+                if (this.state.terms) {
+                    // SEND
+                } else{
+                    this.props.changeErrorMessage('Accepting the Terms of Service is required')
+                }
+            } else{
+                this.props.changeErrorMessage('Passwords do not match')
+            }
+        }else{
+            this.props.changeErrorMessage('Please fill in all fields')
+        }
 
     }
 
@@ -37,7 +50,7 @@ class RegisterForm extends Component {
                     <div className="register-terms">
                         <input type="checkbox" id="register-terms" onChange={this.handleTermsChange} /><p>I accept the <span className="txt-green">Terms of Service</span>.</p>
                     </div>
-                    <button type="submit" onClick={this.handleSubmit} >Next step</button>
+                    <button type="submit" onClick={this.handleFormSubmit} >Next step</button>
                 </form>
             </section>
          );
