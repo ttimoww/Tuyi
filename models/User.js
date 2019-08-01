@@ -4,6 +4,11 @@ require('mongoose-type-email');
 let userSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
+    userName: {
+        type: String,
+        unique: true,
+        required: true
+    },
     email: {
         type: mongoose.SchemaTypes.Email,
         unique: true,
@@ -13,7 +18,6 @@ let userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    availability: []
 })
 
 let User = mongoose.model('User', userSchema, 'users')

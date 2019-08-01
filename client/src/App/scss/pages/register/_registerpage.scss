@@ -11,9 +11,13 @@ div.registerpage{
         padding: 0px 4px;
         box-sizing: border-box;
         position: relative;
-        margin-top: 50vh;
-        transform: translateY(-50%);
+        margin: 160px 0px 00px 0px;
 
+        @media screen and (min-height: 725px) {
+            margin: 50vh 0px 00px 0px;
+            transform: translateY(-50%);
+        }
+    
         @include respond-above(xs){
             padding: 0px;
         }
@@ -37,6 +41,7 @@ div.registerpage{
             position: relative;
             background-color: #EDEEF0;
             border-radius: 6px;
+            margin-bottom: 30px;
 
             div.login-error-message{
                 position: absolute;
@@ -91,8 +96,12 @@ div.registerpage{
 
             div.register__container{
                 width: 100%;
-                padding: 20px;
+                padding: 10px;
                 box-sizing: border-box;
+
+                @include respond-above(xs){
+                    padding: 20px;
+                }
 
                 @import './register-form';
                 @import './register_avatar';

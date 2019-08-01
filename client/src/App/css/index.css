@@ -5,6 +5,7 @@ html, body {
   font-family: "Roboto", sans-serif;
   height: 100%;
   overflow-x: hidden;
+  background-color: #1dd1a1;
 }
 
 #root {
@@ -13,7 +14,6 @@ html, body {
 
 .app {
   height: 100%;
-  background-color: #1dd1a1;
 }
 
 .hidden {
@@ -204,8 +204,13 @@ div.registerpage div.registerpage__content {
   padding: 0px 4px;
   box-sizing: border-box;
   position: relative;
-  margin-top: 50vh;
-  transform: translateY(-50%);
+  margin: 160px 0px 0px 0px;
+}
+@media screen and (min-height: 725px) {
+  div.registerpage div.registerpage__content {
+    margin: 50vh 0px 0px 0px;
+    transform: translateY(-50%);
+  }
 }
 @media (min-width: 576px) {
   div.registerpage div.registerpage__content {
@@ -229,6 +234,7 @@ div.registerpage div.registerpage__content div.register {
   position: relative;
   background-color: #EDEEF0;
   border-radius: 6px;
+  margin-bottom: 30px;
 }
 div.registerpage div.registerpage__content div.register div.login-error-message {
   position: absolute;
@@ -277,8 +283,13 @@ div.registerpage div.registerpage__content div.register div.login-success-messag
 }
 div.registerpage div.registerpage__content div.register div.register__container {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
+}
+@media (min-width: 576px) {
+  div.registerpage div.registerpage__content div.register div.register__container {
+    padding: 20px;
+  }
 }
 div.registerpage div.registerpage__content div.register div.register__container section.registerform {
   width: 100%;

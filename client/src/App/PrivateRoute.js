@@ -21,7 +21,6 @@ class PrivateRoute extends React.Component {
     componentDidMount = () => {
         fetch('/api/isauthenticated')
         .then(resp => {
-            console.log('User is logged in')
             this.setState({
                 isChecked: true,
                 isAuthenticated: resp.status === 200 ? true : false
