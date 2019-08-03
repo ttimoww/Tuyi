@@ -65,10 +65,27 @@ class RegisterForm extends Component {
         }
     }
 
+    /**
+     * Function that does a simple login with a dummy 
+     * account to test phase 1 & 2
+     */
     handleFakeFormSubmit = e => {
         e.preventDefault();
-        this.props.phaseUp();
-        this.props.changeSuccessMessage('You\'re Succesfully registered! Welcome to Tuyi');
+
+        const body = {
+            email: 'my@email.com',
+            password: 'hallo123'
+        }
+
+        fetch('/api/login', {
+            method: 'POST', 
+            body: JSON.stringify(body), 
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then( resp => {
+            this.props.phaseUp();
+            this.props.changeSuccessMessage('You\'re Succesfully registered! Welcome to Tuyi');
+        }) 
     }
 
     render() { 

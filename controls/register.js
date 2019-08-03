@@ -35,12 +35,14 @@ router.post('/register', (req, res) => {
                         password: hash
                     })
 
-                    U1.save((err, docs) => {
+                    U1.save((err, user) => {
                         if (err) {
                             console.log(err);
                             res.status('500');
                             res.json({error: 'Something went wrong'})
                         } else{
+                            console.log(`Registered user ${user._id}`)
+                            req.session.userID = user._id;
                             res.status('200');
                             res.json({'succes': 'Succesfully registered new user'});
                         }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import RegisterForm from './RegisterForm';
 import RegisterAvatar from './RegisterAvatar';
 import RegisterInterests from './RegisterInterests';
@@ -9,7 +10,7 @@ class Registerpage extends Component {
         this.state = { 
             registerErrorMessage: '',
             registerSuccessMessage: '',
-            phase: 1 // There will be 3 phases: User Info -> Profile Pic -> Follow topics
+            phase: 1 
          }
     }
 
@@ -35,7 +36,7 @@ class Registerpage extends Component {
             <div className="registerpage">
                 <div className="registerpage__content">
                 <section className="registerpage__logo">
-                    <div className="registerpage__logo__content"></div>
+                    <Link to="/"><div className="registerpage__logo__content"></div></Link>
                 </section>
                 <div className="register">
                     {this.state.registerErrorMessage ? <div className="login-error-message"><p>{this.state.registerErrorMessage}</p><i className="fas fa-exclamation-triangle"></i></div> : null}
