@@ -76,6 +76,45 @@ div.pageloader div.pageloader__icon {
     transform: rotate(360deg);
   }
 }
+section.page404 {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-height: 350px) {
+  section.page404 {
+    display: flex;
+    align-items: center;
+  }
+}
+section.page404 div.page404__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+section.page404 div.page404__container div.page404__404 {
+  width: 100%;
+  height: 200px;
+  background-image: url("../../images/404/404-w.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section.page404 div.page404__container div.page404__text {
+  color: #FFF;
+  text-align: center;
+}
+section.page404 div.page404__container div.page404__tuyi {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  top: 20px;
+  cursor: pointer;
+  background-image: url("../../images/logos/logo-w-full.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 80px;
+  animation: float 4s ease-in-out infinite;
+}
+
 div.homepage {
   height: 100%;
   display: flex;

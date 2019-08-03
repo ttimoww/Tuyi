@@ -39,7 +39,7 @@ class RegisterAvatar extends Component {
                     <label htmlFor="avatar-upload">Choose File ...</label>
                 </div>
                 <button type="submit" onClick={this.handleSubmit} >Submit</button>
-                <p className="registeravatar__skip" onClick={this.handlePhaseUp}><span className="txt-green">Skip</span> this step for now</p>
+                <p className="registeravatar__skip" onClick={this.handlePhaseUp}>Skip this step for now</p>
             </section>
          );
     }

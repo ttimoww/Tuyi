@@ -85,7 +85,7 @@ class RegisterForm extends Component {
                         <input type="checkbox" id="register-terms" onChange={this.handleTermsChange} /><p>I accept the <span className="txt-green">Terms of Service</span>.</p>
                     </div>
                     <button type="submit" onClick={this.handleFormSubmit} >Next step</button>
-                    {/* <button type="submit" onClick={this.handleFakeFormSubmit} >Development skip</button> */}
+                    <button type="submit" onClick={this.handleFakeFormSubmit} >Development skip</button>
                 </form>
             </section>
          );
